@@ -143,11 +143,14 @@ export default function HomeScreen() {
 
             {showResult && (
                 <View style={styles.infoCard}>
-                    <Text style={styles.infoTitle}>Результат</Text>
-                    <Text style={styles.infoText}>
-                        Здесь будет отображаться информация о доступных социальных гарантиях
-                        на основании выбранных параметров.
-                    </Text>
+                    <Text style={styles.infoTitle}>Готово!</Text>
+                    <Pressable
+                        style={[styles.submitButton, isButtonDisabled && styles.disabledButton]}
+                        disabled={isButtonDisabled}
+                        onPress={() => router.push("/compensation")}
+                    >
+                        <Text style={styles.submitButtonText}>Ознакомиться</Text>
+                    </Pressable>
                 </View>
             )}
 
